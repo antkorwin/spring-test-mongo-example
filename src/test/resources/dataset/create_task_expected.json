@@ -1,0 +1,9 @@
+{
+  "com.antkorwin.springtestmongoexamples.model.Task": [
+    {
+      "id": "regex: ^[a-f0-9]{24}$",
+      "title": "black magic",
+      "estimate": 123
+    }
+  ]
+}
