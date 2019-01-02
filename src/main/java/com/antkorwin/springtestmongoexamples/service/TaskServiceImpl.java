@@ -6,6 +6,8 @@ import com.antkorwin.springtestmongoexamples.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 /**
  * Created on 01.01.2019.
  *
@@ -32,6 +34,7 @@ public class TaskServiceImpl implements TaskService {
         return taskRepository.save(Task.builder()
                                        .title(title)
                                        .estimate(estimate)
+                                       .createTime(new Date())
                                        .build());
     }
 

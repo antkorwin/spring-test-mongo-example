@@ -1,10 +1,8 @@
 {
   "com.antkorwin.springtestmongoexamples.model.Task": [
     {
-      "id": "regex: ^[a-f0-9]{24}$",
       "title": "black magic",
-      "createTime":"date-match:[NOW]",
-      "estimate": 123
+      "estimate": "groovy: (1..7).sum()"
     }
   ]
 }

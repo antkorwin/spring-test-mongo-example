@@ -22,7 +22,7 @@ class TaskServiceIT {
     @Autowired
     private TaskService taskService;
 
-    @Disabled("use just to generate test dataset")
+    @Disabled("use it just to generate an initial dataset")
     @Test
     @ExportMongoDataSet(outputFile = "./target/datasets/create_task_expected.json")
     void generate() {
@@ -45,5 +45,13 @@ class TaskServiceIT {
         assertThat(task).isNotNull()
                         .extracting(Task::getTitle, Task::getEstimate)
                         .containsOnly("black magic", 1987);
+    }
+
+    @Test
+    @MongoDataSet(cleanBefore = true, cleanAfter = true)
+    @ExpectedMongoDataSet("dataset/create_task_groovy_expected.json")
+    void groovy() {
+        taskService.create("black magic",
+                           1 + 2 + 3 + 4 + 5 + 6 + 7);
     }
 }

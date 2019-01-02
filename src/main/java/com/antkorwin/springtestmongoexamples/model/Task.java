@@ -4,6 +4,8 @@ import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Date;
+
 /**
  * Created on 01.01.2019.
  *
@@ -23,4 +25,6 @@ public class Task {
     private String title;
 
     private int estimate;
+
+    private Date createTime;
 }
