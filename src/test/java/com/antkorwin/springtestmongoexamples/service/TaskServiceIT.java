@@ -48,6 +48,13 @@ class TaskServiceIT {
     }
 
     @Test
+    @MongoDataSet(value = "dataset/get_task.json", cleanBefore = true, cleanAfter = true)
+    @ExpectedMongoDataSet(value = "dataset/delete_task_expected.json")
+    void delete() {
+        taskService.delete("5c2bfcf442a9171e16d5f0f0");
+    }
+
+    @Test
     @MongoDataSet(cleanBefore = true, cleanAfter = true)
     @ExpectedMongoDataSet("dataset/create_task_groovy_expected.json")
     void groovy() {
