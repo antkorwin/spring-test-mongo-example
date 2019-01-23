@@ -9,6 +9,8 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Date;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
@@ -37,6 +39,13 @@ class TaskServiceIT {
     }
 
     @Test
+    @MongoDataSet(cleanBefore = true, cleanAfter = true)
+    @ExpectedMongoDataSet("dataset/email.json")
+    void email() {
+        taskService.create("antkorwin@gmail.com", 123);
+    }
+
+    @Test
     @MongoDataSet(value = "dataset/get_task.json", cleanBefore = true, cleanAfter = true)
     void get() {
         // Act
@@ -60,5 +69,14 @@ class TaskServiceIT {
     void groovy() {
         taskService.create("black magic",
                            1 + 2 + 3 + 4 + 5 + 6 + 7);
+    }
+
+    @Test
+    @MongoDataSet(cleanBefore = true, cleanAfter = true,
+                  value = "dataset/init_task_groovy.json")
+    void groovyInitTest() {
+        Task task = taskService.get("55f3ed00b1375a48e618300a");
+        assertThat(task).extracting(Task::getEstimate, Task::getCreateTime)
+                        .contains(1 + 2 + 3 + 4 + 5, new Date(12345));
     }
 }

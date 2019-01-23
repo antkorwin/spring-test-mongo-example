@@ -1,0 +1,10 @@
+{
+  "com.antkorwin.springtestmongoexamples.model.Task": [
+    {
+      "id": "55f3ed00b1375a48e618300a",
+      "title": "black magic",
+      "estimate": "groovy: (1..5).sum()",
+      "createTime": "groovy: new Date(12345)"
+    }
+  ]
+}
