@@ -1,10 +1,10 @@
 package com.antkorwin.springtestmongoexamples.service;
 
-import com.antkorwin.springtestmongo.annotation.ExpectedMongoDataSet;
-import com.antkorwin.springtestmongo.annotation.ExportMongoDataSet;
-import com.antkorwin.springtestmongo.annotation.MongoDataSet;
-import com.antkorwin.springtestmongo.junit5.meta.annotation.MongoDbIntegrationTest;
 import com.antkorwin.springtestmongoexamples.model.Task;
+import com.jupiter.tools.spring.test.mongo.annotation.ExpectedMongoDataSet;
+import com.jupiter.tools.spring.test.mongo.annotation.ExportMongoDataSet;
+import com.jupiter.tools.spring.test.mongo.annotation.MongoDataSet;
+import com.jupiter.tools.spring.test.mongo.junit5.meta.annotation.MongoDbIntegrationTest;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
