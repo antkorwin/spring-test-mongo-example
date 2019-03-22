@@ -1,0 +1,7 @@
+{
+  "com.antkorwin.springtestmongoexamples.model.Task": [
+    {
+      "title": "regex: \\S+@\\S+\\.\\S+$"
+    }
+  ]
+}
