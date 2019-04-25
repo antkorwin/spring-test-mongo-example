@@ -16,11 +16,24 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<spring-boot.version>2.1.1.RELEASE</spring-boot.version>
-		<junit.vintage.version>5.4.1</junit.vintage.version>
-		<junit-jupiter.version>5.4.1</junit-jupiter.version>
-		<junit-platform.version>1.4.1</junit-platform.version>
+		<spring-boot.version>2.0.8.RELEASE</spring-boot.version>
+		<junit.vintage.version>5.4.2</junit.vintage.version>
+		<junit-jupiter.version>5.4.2</junit-jupiter.version>
+		<junit-platform.version>1.4.2</junit-platform.version>
 	</properties>
+
+	<repositories>
+		<repository>
+			<id>dependency-snapshots-repo</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 
 	<dependencies>
 		<dependency>
@@ -35,9 +48,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.antkorwin</groupId>
+			<groupId>com.jupiter-tools</groupId>
 			<artifactId>spring-test-mongo</artifactId>
-			<version>0.12-SNAPSHOT</version>
+			<version>0.13</version>
 		</dependency>
 
 		<!-- Groovy -->
